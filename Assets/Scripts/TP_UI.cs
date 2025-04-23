@@ -5,9 +5,11 @@ using TMPro;
 
 public class TP_UI : MonoBehaviour
 {
-    public TMP_InputField inputClave;
+    public TMP_InputField username;
+    public TMP_InputField password;
     public TextMeshProUGUI resultado;
-    string clave = "clave";
+    string usuario = "usuario";
+    string contraseña = "contraseña";
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +25,12 @@ public class TP_UI : MonoBehaviour
 
     public void ComprobarClaveIngresada()
     {
-        string claveIngresada = inputClave.text;
-        if ( claveIngresada != clave)
+        string usuarioIngresado = username.text;
+        string contraseñaIngresada = password.text;
+        if ( usuarioIngresado != usuario || contraseñaIngresada != contraseña)
         {
             resultado.text = "Acceso Denegado";
-            inputClave.text = "";
+            password.text = "";
         }
         else
         {
